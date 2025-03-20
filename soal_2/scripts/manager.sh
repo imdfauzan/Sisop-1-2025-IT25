@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CPU_SCRIPT="$HOME/soal_2/scripts/core_monitor.sh"
-RAM_SCRIPT="$HOME/soal_2/scripts/frag_monitor.sh"
+CPU_SCRIPT="$HOME/Modul1/soal_2/scripts/core_monitor.sh"
+RAM_SCRIPT="$HOME/Modul1/soal_2/scripts/frag_monitor.sh"
 
 # ngecek apkah core_monitor.sh dan frag_monitor.sh ada
 if [ ! -f "$CPU_SCRIPT" ] || [ ! -f "$RAM_SCRIPT" ]; then

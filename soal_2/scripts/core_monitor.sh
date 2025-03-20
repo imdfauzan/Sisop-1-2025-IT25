@@ -7,7 +7,8 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # buat file log
-LOG_FILE="./log/core.log"
+mkdir -p ./log
+LOG_FILE="../log/core.log"
 
 # fungsi print cpu
 CPU_USAGE=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage "%"}')

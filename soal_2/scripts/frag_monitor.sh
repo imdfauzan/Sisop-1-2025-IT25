@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_FILE="./log/fragment.log"
+LOG_FILE="../log/fragment.log"
 
 # ambil datanya dan dibagi 1024 (mengubah satuan dari KB ke MB)
 RAM_TOTAL=$(free -m | awk '/Mem:/ {print $2}')

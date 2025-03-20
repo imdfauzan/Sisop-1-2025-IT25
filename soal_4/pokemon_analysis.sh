@@ -94,7 +94,7 @@ sort_data() {
     # buat header
     header=$(head -n 1 "$FILE")
 
-    column_index=$(echo "$header" | tr ',' '\n' | nl -w1 -s',' | grep -i "$column_name" | cut -d',' -f1)
+    column_index=$(echo "$header" | tr ',' '\n' | nl -w1 -s',' | grep -i "$column_name" | cut -d',' -f1 | head -n 1)
 
     if [ -z "$column_index" ]; then
         echo "Kolom '$column_name' tidak ditemukan dalam file CSV!"

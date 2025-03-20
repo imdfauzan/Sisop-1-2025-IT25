@@ -16,6 +16,23 @@ EMAIL="$1"
 USERNAME="$2"
 PASSWORD="$3"
 
+validate_email() {
+    local email="$1"
+    if [[ "$email" =~ @ && "$email" =~ \. ]]; then
+        return 0  # jk valid
+    else
+        return 1  # jk tdk valid
+    fi
+}
+
+validate_password() {
+    local password="$1"
+    if [[ "${#password}" -ge 8 && "$password" =~ [a-z] && "$password" =~ [A-Z] && "$password" =~ [0-9] ]]; then
+        return 0  # jk valid
+    else
+        return 1  # jk tdk valid
+    fi
+}
 
 # cek jika email blm dimasukkan
 if [ -z "$EMAIL" ]; then
@@ -53,23 +70,6 @@ if ! validate_password "$PASSWORD"; then
     exit 1
 fi
 
-validate_email() {
-    local email="$1"
-    if [[ "$email" =~ @ && "$email" =~ \. ]]; then
-        return 0  # jk valid
-    else
-        return 1  # jk tdk valid
-    fi
-}
-
-validate_password() {
-    local password="$1"
-    if [[ "${#password}" -ge 8 && "$password" =~ [a-z] && "$password" =~ [A-Z] && "$password" =~ [0-9] ]]; then
-        return 0  # jk valid
-    else
-        return 1  # jk tdk valid
-    fi
-}
 
 hash_password() {
     local password="$1"
